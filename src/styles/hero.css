@@ -1,0 +1,29 @@
+.hero-bg {
+  background: linear-gradient(
+    135deg,
+    #e8eefa 0%,
+    #f3f1fd 50%,
+    #fde4f2 100%
+  );
+}
+
+/* DARK MODE BACKGROUND */
+.dark .hero-bg {
+  background: linear-gradient(
+    135deg,
+    #020617 0%,
+    #0f172a 50%,
+    #1e1b4b 100%
+  );
+}
+
+.hero-name {
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #7c3aed,
+    #db2777
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
