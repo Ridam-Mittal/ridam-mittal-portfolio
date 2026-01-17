@@ -7,47 +7,46 @@ export const educationData = {
   timeline: [
     {
       id: 1,
-      year: "2020 - 2024",
+      year: "2022 - 2026",
       degree: "Bachelor of Technology",
-      field: "Computer Science Engineering",
-      institute: "Delhi Technological University, New Delhi",
-      score: "CGPA: 8.7/10",
+      field: "Computer Science & Engineering",
+      institute: "Bennett University, Greater Noida, India",
+      score: "CGPA: 9.42/10",
       icon: FaGraduationCap,
       color: "blue",
       points: [
-        "Specialized in Data Structures, Algorithms, and Web Technologies",
-        "Led technical team for college tech fest",
-        "Published research paper on ML applications"
+        "Studied core subjects including Data Structures, Algorithms, DBMS, and Operating Systems",
+        "Worked on multiple academic and personal software projects",
+        "Actively practicing problem-solving and competitive programming"
       ]
     },
 
     {
       id: 2,
-      year: "2018 - 2020",
-      degree: "Senior Secondary Education",
-      field: "Science Stream (PCM)",
-      institute: "Delhi Public School, New Delhi",
-      score: "Percentage: 94.2%",
+      year: "2021 - 2022",
+      degree: "Senior Secondary Education (12th Grade)",
+      field: "Non-Medical (PCM)",
+      institute: "MG Public School, Muzaffarnagar, Uttar Pradesh, India",
+      score: "Percentage: 96.2%",
       icon: FaSchool,
       color: "purple",
       points: [
-        "School topper in Computer Science",
-        "Won multiple coding competitions"
+        "Built a strong foundation in Physics, Chemistry, and Mathematics",
+        "Maintained consistent academic excellence with top grades"
       ]
     },
 
     {
       id: 3,
-      year: "2023",
-      degree: "Online Certifications",
-      field: "Continuous Learning",
-      institute: "",
-      score: "",
+      year: "2019 - 2020",
+      degree: "Secondary Education (10th Grade)",
+      institute: "MG Public School, Muzaffarnagar, Uttar Pradesh, India",
+      score: "Percentage: 92.6%",
       icon: FaCertificate,
       color: "pink",
       points: [
-        "AWS Certified Solutions Architect",
-        "Full Stack Web Development – Coursera"
+        "Achieved strong academic performance across all subjects",
+        "Demonstrated commitment to studies and extracurricular activities"
       ]
     }
   ]

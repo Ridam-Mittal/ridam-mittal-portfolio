@@ -1,12 +1,45 @@
 import { navLinks } from "../data/navLinks";
 import { socials } from "../data/socials";
 import { BsMoonFill, BsSunFill, BsList } from "react-icons/bs";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTheme } from "../context/ThemeContext";
 
-function Sidebar() {
+function Sidebar({ scrollRef }) {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("home");
   const { dark, setDark } = useTheme();
+
+  /* ACTIVE SECTION DETECTION */
+  useEffect(() => {
+  if (!scrollRef?.current) return;
+
+  const container = scrollRef.current;
+  const sections = container.querySelectorAll("section[id]");
+
+  const onScroll = () => {
+    let current = "home";
+
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+
+      const offset = rect.top - containerRect.top;
+
+      if (offset <= container.clientHeight / 2) {
+        current = section.id;
+      }
+    });
+
+    setActive(current);
+  };
+
+  container.addEventListener("scroll", onScroll);
+  onScroll();
+
+  return () => container.removeEventListener("scroll", onScroll);
+}, []);
+
+
 
   return (
     <>
@@ -31,15 +64,17 @@ function Sidebar() {
       )}
 
       {/* SIDEBAR */}
-      <div
+      <aside
+        onClick={(e) => e.stopPropagation()}   // 🔥 STOP CLOSING BUG
         className={`
-        fixed left-0 top-0 h-screen 
-        bg-white dark:bg-[#050d2c] 
+        fixed left-0 top-0 h-screen z-50
+        bg-white dark:bg-gradient-to-b 
+        dark:bg-[#212b3a]
         flex flex-col
-        border-r border-gray-100 dark:border-gray-800
-        shadow-[4px_0_20px_rgba(0,0,0,0.05)]
+        border-r border-gray-50 dark:border-gray-700
+        shadow-[4px_0_20px_rgba(0,0,0,0.08)]
 
-        w-[clamp(240px,20vw,320px)]
+        w-[clamp(240px,80vw,320px)]
         transform transition-all duration-300
 
         ${open ? "translate-x-0" : "-translate-x-full"}
@@ -53,31 +88,19 @@ function Sidebar() {
           <img
             src="https://i.ibb.co/fzhxSc87/processed-linkedin-photo.jpg"
             alt="Profile"
-            className="
-            w-32 h-32 rounded-full
-            border-4 border-blue-200
-            object-cover mt-1"
+            className="w-32 h-32 rounded-full border-4 border-blue-200 object-cover dark:border-blue-700"
           />
 
-          <h3
-            className="
-            mt-4 text-center font-bold text-[1.5em]
-            text-black dark:text-white"
-          >
+          <h3 className="mt-4 font-bold text-2xl text-black dark:text-white">
             Ridam Mittal
           </h3>
 
-          <p
-            className="
-            text-center text-gray-500
-            dark:text-gray-400
-            font-medium text-[0.95em]"
-          >
+          <p className="text-gray-500 dark:text-gray-400 text-sm">
             Full Stack Developer
           </p>
 
           {/* SOCIALS */}
-          <div className="flex justify-center gap-3 mt-6">
+          <div className="flex gap-3 mt-5">
             {socials.map((item) => {
               const Icon = item.icon;
               return (
@@ -87,12 +110,10 @@ function Sidebar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
-                  bg-gray-100 dark:bg-gray-800
-                  p-2 rounded-full 
-                  hover:bg-gray-200 dark:hover:bg-gray-700
-                  transition
-                  w-10 h-10 flex items-center justify-center
-                  text-black dark:text-white"
+                  bg-gray-100 dark:bg-gray-700
+                  p-3 rounded-full 
+                  hover:bg-gray-200 dark:hover:bg-gray-700 dark:text-white
+                  transition"
                 >
                   <Icon size={16} />
                 </a>
@@ -104,11 +125,12 @@ function Sidebar() {
           <button
             onClick={() => setDark(!dark)}
             className="
-            mt-6 bg-gray-100 dark:bg-gray-800
+            mt-6 w-1/2   /* 🔥 FIXED WIDTH */
+            bg-gray-100 dark:bg-gray-700 cursor-pointer
             text-black dark:text-white
             rounded-lg py-2 
-            w-1/2 flex items-center justify-center gap-2
-            text-[14px] font-medium
+            flex items-center justify-center gap-2
+            text-sm font-medium
             hover:bg-gray-200 dark:hover:bg-gray-700
             transition"
           >
@@ -118,29 +140,29 @@ function Sidebar() {
         </div>
 
         {/* NAV */}
-        <div
+        <nav
           className="
           flex-1 overflow-y-auto px-6 space-y-2
           border-t border-b
-          border-gray-200 dark:border-gray-800
-          pt-8 no-scrollbar"
+          border-gray-200 dark:border-gray-700
+          pt-6 no-scrollbar"
         >
           {navLinks.map((item) => {
             const Icon = item.icon;
-            const isActive = item.id === "home"; // later dynamic
+            const isActive = item.id === active;
 
             return (
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                onClick={() => setOpen(false)}
+                onClick={() => setOpen(false)}   // close only after nav click
                 className={`
                 flex items-center gap-3
                 px-4 py-3 rounded-xl
                 text-sm font-medium transition
                 ${
                   isActive
-                    ? "bg-[#E8F1FF] text-[#2563EB]"
+                    ? "bg-[#E8F1FF] text-[#2563EB] dark:bg-[#1a335a] dark:text-[#4781fe]"
                     : `
                       text-gray-800 dark:text-gray-300
                       hover:bg-gray-100 dark:hover:bg-gray-800
@@ -152,27 +174,22 @@ function Sidebar() {
                   className={
                     isActive
                       ? "text-[#2563EB]"
-                      : "text-gray-700 dark:text-gray-400"
+                      : "text-gray-600 dark:text-gray-400"
                   }
                 />
                 {item.label}
               </a>
             );
           })}
-        </div>
+        </nav>
 
         {/* FOOTER */}
-        <div
-          className="
-          py-6 text-xs 
-          text-gray-600 dark:text-gray-400
-          flex justify-around items-center"
-        >
-          <p>© {new Date().getFullYear()} Ridam Mittal</p>
+        <div className="py-4 text-xs text-gray-500 dark:text-gray-400 flex justify-around">
+          <p>© {new Date().getFullYear()} Ridam</p>
           <p>Portfolio</p>
         </div>
 
-      </div>
+      </aside>
     </>
   );
 }

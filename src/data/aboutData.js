@@ -1,9 +1,4 @@
-import {
-  Code2,
-  Users,
-  Lightbulb,
-  BookOpen
-} from "lucide-react";
+import { Code2, Users, Lightbulb, BookOpen } from "lucide-react";
 
 export const aboutData = {
   title: "About Me",
@@ -11,62 +6,62 @@ export const aboutData = {
   journeyTitle: "My Journey",
 
   paragraphs: [
-    "I'm a passionate Full Stack Developer with a strong foundation in computer science and a love for creating innovative solutions. My journey in tech started with curiosity about how things work, which led me to pursue a degree in Computer Science Engineering.",
+    "I'm a Backend Developer Intern (Node.js) and final-year Computer Science student who enjoys building scalable applications and solving real-world engineering problems. My interest in technology started with curiosity about how systems work, which eventually led me to pursue Computer Science Engineering.",
 
-    "Throughout my academic and professional career, I've worked on diverse projects ranging from web applications to machine learning models, always striving to write clean, efficient, and maintainable code.",
+    "I have hands-on experience working with REST APIs, databases, and full-stack web applications. From building SaaS platforms to personal projects, I focus on writing clean, efficient, and maintainable code.",
 
-    "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community through blog posts and tutorials."
+    "Beyond coding, I actively improve my problem-solving skills through DSA practice, explore new technologies, and contribute to projects that help me grow as a developer.",
   ],
 
   quickFacts: [
     {
       id: 1,
-      title: "Clean Code Advocate",
-      desc: "Believer in writing maintainable and scalable code",
+      title: "Quick Learner",
+      desc: "Able to adapt quickly and pick up new technologies",
       icon: Code2,
-      color: "#2563EB"
+      color: "#2563EB",
     },
     {
       id: 2,
       title: "Team Player",
-      desc: "Experienced in agile methodologies and collaboration",
+      desc: "Comfortable working in team-based projects",
       icon: Users,
-      color: "#9333EA"
+      color: "#9333EA",
     },
     {
       id: 3,
       title: "Problem Solver",
-      desc: "Love tackling complex challenges with creative solutions",
+      desc: "Enjoy solving DSA and real-world challenges",
       icon: Lightbulb,
-      color: "#DB2777"
+      color: "#DB2777",
     },
     {
       id: 4,
       title: "Continuous Learner",
-      desc: "Always exploring new technologies and best practices",
+      desc: "Regularly improving skills and exploring new tools",
       icon: BookOpen,
-      color: "#4F46E5"
-    }
+      color: "#4F46E5",
+    },
   ],
 
   stats: [
     {
-        id: 1,
-        value: "300+",
-        label: "DSA Problems Solved",
-        color: "#2563EB"
+      id: 1,
+      value: "500+",
+      label: "DSA Problems Solved",
+      color: "#2563EB",
     },
     {
-        id: 2,
-        value: "50+",
-        label: "GitHub Repositories",
-        color: "#9333EA"
+      id: 2,
+      value: "30+",
+      label: "GitHub Repositories",
+      color: "#9333EA",
     },
     {
-        id: 3,
-        value: "6+",
-        label: "Months Industry Experience",
-        color: "#DB2777"
-    }
-  ]
+      id: 3,
+      value: "5+",
+      label: "Months Industry Experience",
+      color: "#DB2777",
+    },
+  ],
 };

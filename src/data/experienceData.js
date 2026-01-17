@@ -6,35 +6,48 @@ import {
 export const experienceData = {
   title: "Work Experience",
   subtitle:
-    "Professional experiences that shaped my career and expertise",
+    "Hands-on experience building production-grade software applications",
 
   experiences: [
     {
       id: 1,
-      role: "Full Stack Developer Intern",
-      company: "TechCorp Solutions Pvt. Ltd.",
+      role: "Backend Developer Intern",
+      company: "FutureSoft India Pvt. Ltd.",
       icon: FaBuilding,
-      start: "June 2023",
+      start: "September 2025",
       end: "Present",
-      location: "New Delhi, India",
+      location: "Noida, India",
       current: true,
 
       responsibilities: [
-        "Developed and maintained scalable web applications using React.js, Node.js, and MongoDB, serving 50,000+ active users",
-        "Implemented RESTful APIs and integrated third-party services, reducing API response time by 40%",
-        "Collaborated with cross-functional teams using Agile methodologies to deliver features on time",
-        "Optimized database queries and implemented caching strategies, improving application performance by 35%",
-        "Wrote comprehensive unit tests achieving 85% code coverage using Jest and React Testing Library"
+        "Built protocol-compliant APIs for the ONDC IGM SaaS platform, implementing actions like /issue, /on_issue, and /status as per specifications",
+
+        "Developed dashboard APIs to process complex nested payloads, enabling smooth buyer–seller dispute workflows",
+
+        "Implemented Kafka consumers to ingest real-time order data for the ONDC RSF platform from Seller Applications",
+
+        "Integrated webhooks and Socket.io to stream live updates from an AI microservice for email generation tracking",
+
+        "Designed tenant management APIs for the Identity SaaS service, enabling secure onboarding and controlled phase transitions",
+
+        "Implemented necessary validations, authentication, and middleware to improve API reliability",
+
+        "Collaborated with senior engineers to refine database schemas and optimize data models",
+
+        "Debugged bugs raised on JIRA and improved system stability in collaboration with the team"
       ],
 
+
       technologies: [
-        "React.js",
         "Node.js",
         "MongoDB",
         "Express.js",
-        "Redux",
-        "Docker",
-        "AWS"
+        "Kafka",
+        "Postgres SQL",
+        "Socket.io",
+        "RESTful APIs",
+        "JWT Authentication",
+        "Agile Methodologies",
       ]
     },
   ]

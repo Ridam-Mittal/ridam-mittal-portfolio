@@ -1,9 +1,9 @@
 .hero-bg {
   background: linear-gradient(
     135deg,
-    #e8eefa 0%,
-    #f3f1fd 50%,
-    #fde4f2 100%
+    #d9e6fe 0%,
+    #e5e0fe 50%,
+    #ffe0f1 100%
   );
 }
 
@@ -12,7 +12,7 @@
   background: linear-gradient(
     135deg,
     #020617 0%,
-    #0f172a 50%,
+    #18243f 50%,
     #1e1b4b 100%
   );
 }
