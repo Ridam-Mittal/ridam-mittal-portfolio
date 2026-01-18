@@ -14,10 +14,10 @@ function Contact() {
 
     emailjs
       .sendForm(
-        "service_gxmq138",
-        "template_zsri2q4",
+        import.meta.env.VITE_EMAIL_SERVICE_ID,
+        import.meta.env.VITE_EMAIL_TEMPLATE_ID,
         formRef.current,
-        "PdPLKhYDA0u3gATyi"
+        import.meta.env.VITE_EMAIL_PUBLIC_KEY
       )
       .then(() => {
         alert("Message sent successfully!");
