@@ -2,33 +2,37 @@ import { contactData } from "../data/contactData";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import emailjs from "emailjs-com";
 import { useRef, useState } from "react";
+import toast from "react-hot-toast";
 
 function Contact() {
 
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs
-      .sendForm(
+    try {
+      // Send mail to YOU
+      await emailjs.sendForm(
         import.meta.env.VITE_EMAIL_SERVICE_ID,
         import.meta.env.VITE_EMAIL_TEMPLATE_ID,
         formRef.current,
         import.meta.env.VITE_EMAIL_PUBLIC_KEY
-      )
-      .then(() => {
-        alert("Message sent successfully!");
-        formRef.current.reset();
-        setLoading(false);
-      })
-      .catch(() => {
-        alert("Failed to send message. Try again!");
-        setLoading(false);
-      });
+      );
+
+      toast.success("Message sent successfully!");
+      formRef.current.reset();
+
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to send message. Try again!");
+    } finally {
+      setLoading(false);
+    }
   };
+
 
   return (
     <section
