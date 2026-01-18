@@ -184,10 +184,11 @@ function Sidebar({ scrollRef }) {
         </nav>
 
         {/* FOOTER */}
-        <div className="py-4 text-xs text-gray-500 dark:text-gray-400 flex justify-around">
+        <div className="mt-auto py-4 text-xs text-gray-500 dark:text-gray-400 flex justify-around">
           <p>© {new Date().getFullYear()} Ridam</p>
           <p>Portfolio</p>
         </div>
+
 
       </aside>
     </>
