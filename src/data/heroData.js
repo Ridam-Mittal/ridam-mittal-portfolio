@@ -7,7 +7,7 @@ export const heroData = {
 
   location: "New Delhi, India",
   email: "ridam112004@gmail.com",
-  phone: "+91 7889534549",
+  phone: "",
   resumeLink: "https://drive.google.com/file/d/1IGj9JrqQIIfSjj0w7VqGHqz9DAmOo9gU/view?usp=sharing",
 
   ctas: [

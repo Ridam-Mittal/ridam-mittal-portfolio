@@ -150,7 +150,9 @@ function Projects() {
                     flex-1 text-sm
                     flex items-center justify-center gap-2
                     hover:bg-gray-300 dark:hover:bg-gray-700
-                    transition"
+                    transition cursor-pointer"
+                    disabled={!proj.github}
+                    onClick={() => window.open(proj.github, "_blank")}
                   >
                     GitHub
                   </button>

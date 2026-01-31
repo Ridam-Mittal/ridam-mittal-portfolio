@@ -120,9 +120,9 @@ function Hero() {
         <div
           className="
           flex flex-col sm:flex-row
-          justify-center gap-4 sm:gap-6
+          justify-center gap-4 sm:gap-12
           text-gray-700 dark:text-gray-300
-          text-xs sm:text-sm"
+          text-xs sm:text-sm pb-4"
         >
           <div className="flex items-center gap-2 justify-center">
             <MapPin size={16} className="text-[#2563EB]" />
@@ -133,11 +133,11 @@ function Hero() {
             <Mail size={16} className="text-[#7C3AED]" />
             {heroData.email}
           </div>
-
-          <div className="flex items-center gap-2 justify-center">
+          
+          {/* <div className="flex items-center gap-2 justify-center">
             <Phone size={16} className="text-[#DB2777]" />
             {heroData.phone}
-          </div>
+          </div> */}
         </div>
 
       </div>

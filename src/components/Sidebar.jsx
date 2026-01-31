@@ -167,7 +167,11 @@ function Sidebar({ scrollRef }) {
                       text-gray-800 dark:text-gray-300
                       hover:bg-gray-100 dark:hover:bg-gray-800
                     `
-                }`}
+                }
+                ${item.id === navLinks[navLinks.length - 1].id
+                    ? "mb-4"
+                    : ""}`
+              }
               >
                 <Icon
                   size={18}
@@ -182,7 +186,7 @@ function Sidebar({ scrollRef }) {
             );
           })}
         </nav>
-
+        
         {/* FOOTER */}
         <div className="mt-auto py-4 text-xs text-gray-500 dark:text-gray-400 flex justify-around">
           <p>© {new Date().getFullYear()} Ridam</p>
